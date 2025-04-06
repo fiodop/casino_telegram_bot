@@ -6,6 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 //entity class of casino users
 @Entity
 @Table(name = "users_")
@@ -19,9 +22,11 @@ public class AppUser {
     int id;
     @Column(unique = true, nullable = false, name = "username")
     String username;
-    String balance;
+    int balance;
     //field-counter of played games
-    String gamesCounter;
+    int gamesCounter;
     //field-counter of sum of all bids
     int totalSum;
+    //field of registration date
+    LocalDateTime registrationDate;
 }
